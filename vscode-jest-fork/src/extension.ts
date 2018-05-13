@@ -31,6 +31,8 @@ export function activate(context: vscode.ExtensionContext) {
     { language: 'javascriptreact' },
     { language: 'typescript' },
     { language: 'typescriptreact' },
+    { language: 'reason' },
+    { language: 'reasonreact' },
   ]
   context.subscriptions.push(
     registerStatusBar(channel),

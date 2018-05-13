@@ -128,7 +128,7 @@
       {
         "type": "vscode-jest-tests",
         "label": "Debug Jest tests using vscode-jest",
-        "languages": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+        "languages": ["javascript", "javascriptreact", "typescript", "typescriptreact", "reason", "reasonreact"],
         "configurationSnippets": [
           {
             "label": "Jest:  Default jest configuration",

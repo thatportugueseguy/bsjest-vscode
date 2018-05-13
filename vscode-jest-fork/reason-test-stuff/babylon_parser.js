@@ -5,38 +5,38 @@ const parse = (exports.parse = file => {
     itBlocks: [],
     expects: [],
   }
-  console.log('execSync bs-jest:' + execSync('pwd'))
-  const data = execSync('migrate.byte ' + file)
+  const data = execSync('./migrate.byte ' + file).toString()
   const lines = data.split('\n')
-  for (let i = 0; i < lines.length; i += 3) {
+  let i = 0
+  for (; i < lines.length; i += 3) {
+    if (lines[i] == '@') break
     const startPosition = lines[i + 1].split(' ')
     const endPosition = lines[i + 2].split(' ')
 
     result.itBlocks.push({
       start: {
-        line: startPosition[0],
-        column: startPosition[1],
+        line: parseInt(startPosition[0]),
+        column: parseInt(startPosition[1]),
       },
       end: {
-        line: endPosition[0],
-        column: endPosition[1],
+        line: parseInt(endPosition[0]),
+        column: parseInt(endPosition[1]),
       },
       file: file,
+      name: lines[i],
     })
-    if (line == '@') break
   }
-
-  for (let i = 0; i < lines.length; i += 3) {
+  for (i++; i + 2 < lines.length; i += 2) {
     const startPosition = lines[i].split(' ')
     const endPosition = lines[i + 1].split(' ')
-    result.itBlocks.push({
+    result.expects.push({
       start: {
-        line: startPosition[0],
-        column: startPosition[1],
+        line: parseInt(startPosition[0]),
+        column: parseInt(startPosition[1]),
       },
       end: {
-        line: endPosition[0],
-        column: endPosition[1],
+        line: parseInt(endPosition[0]),
+        column: parseInt(endPosition[1]),
       },
     })
   }
