@@ -1,0 +1,102 @@
+import { window, OverviewRulerLane, DecorationRangeBehavior } from 'vscode'
+
+export function failingItName() {
+  return window.createTextEditorDecorationType({
+    overviewRulerColor: 'red',
+    overviewRulerLane: OverviewRulerLane.Left,
+    light: {
+      before: {
+        color: '#FF564B',
+        contentText: '●',
+      },
+    },
+    dark: {
+      before: {
+        color: '#AD322D',
+        contentText: '●',
+      },
+    },
+    rangeBehavior: DecorationRangeBehavior.ClosedClosed,
+  })
+}
+
+export function skipItName() {
+  return window.createTextEditorDecorationType({
+    overviewRulerColor: 'yellow',
+    overviewRulerLane: OverviewRulerLane.Left,
+    light: {
+      before: {
+        color: '#fed37f',
+        contentText: '○',
+      },
+    },
+    dark: {
+      before: {
+        color: '#fed37f',
+        contentText: '○',
+      },
+    },
+    rangeBehavior: DecorationRangeBehavior.ClosedClosed,
+  })
+}
+
+export function passingItName() {
+  return window.createTextEditorDecorationType({
+    overviewRulerColor: 'green',
+    overviewRulerLane: OverviewRulerLane.Left,
+    light: {
+      before: {
+        color: '#3BB26B',
+        contentText: '●',
+      },
+    },
+    dark: {
+      before: {
+        color: '#2F8F51',
+        contentText: '●',
+      },
+    },
+    rangeBehavior: DecorationRangeBehavior.ClosedClosed,
+  })
+}
+
+export function notRanItName() {
+  return window.createTextEditorDecorationType({
+    overviewRulerColor: 'darkgrey',
+    overviewRulerLane: OverviewRulerLane.Left,
+    dark: {
+      before: {
+        color: '#3BB26B',
+        contentText: '○',
+      },
+    },
+    light: {
+      before: {
+        color: '#2F8F51',
+        contentText: '○',
+      },
+    },
+    rangeBehavior: DecorationRangeBehavior.ClosedClosed,
+  })
+}
+
+export function failingAssertionStyle(text: string) {
+  return window.createTextEditorDecorationType({
+    isWholeLine: true,
+    overviewRulerColor: 'red',
+    overviewRulerLane: OverviewRulerLane.Left,
+    light: {
+      before: {
+        color: '#FF564B',
+      },
+    },
+    dark: {
+      before: {
+        color: '#AD322D',
+      },
+    },
+    after: {
+      contentText: ' // ' + text,
+    },
+  })
+}
