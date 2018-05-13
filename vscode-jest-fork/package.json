@@ -190,7 +190,8 @@
     "vscode:prepublish": "yarn clean-out && tsc -p ./tsconfig.publish.json",
     "compile": "tsc -watch -p ./tsconfig.publish.json",
     "lint": "node scripts/lint",
-    "postinstall": "node ./node_modules/vscode/bin/install",
+    "postinstall":
+      "node ./node_modules/vscode/bin/install && cp reason-test-stuff/babylon_parser.js node_modules/jest-editor-support/build/parsers/babylon_parser.js",
     "test": "jest --config jest.json",
     "watch-test": "yarn test -- --watch",
     "prettier": "prettier",
