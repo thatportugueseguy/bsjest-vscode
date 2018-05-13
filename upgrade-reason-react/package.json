@@ -1,0 +1,31 @@
+{
+  "name": "upgrade-reason-react",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "bsb -w",
+    "clean": "bsb -clean",
+    "postinstall": "bsb"
+  },
+  "files": [
+    "src/refmt_api.ml",
+    "src/migrate.re",
+    "bsconfig.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenglou/upgrade-reason-react-to-031.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenglou/upgrade-reason-react-to-031/issues"
+  },
+  "homepage": "https://github.com/chenglou/upgrade-reason-react-to-031#readme",
+  "dependencies": {
+    "bs-platform": "github:bsansouci/bsb-native#2.1.1"
+  }
+}
