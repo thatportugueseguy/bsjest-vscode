@@ -7,7 +7,7 @@ test("basename()", () =>
   |> toEqual("quux.html")
 );
 
-  test("basename()", () =>
+  test("otherFn()", () =>
   expect(Mypath.basename("/foo/bar/baz/asdf/quux.html", ()))
   |> toEqual("quux.html")
 );
