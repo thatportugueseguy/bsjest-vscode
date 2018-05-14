@@ -64,7 +64,7 @@ let expectsMapper = {
             print_string("      \"start\": [");
             print_endline(string_of_int(pexp_loc.Location.loc_start.pos_lnum) ++ ", " ++ string_of_int(pexp_loc.Location.loc_start.pos_cnum - pexp_loc.Location.loc_start.pos_bol) ++ "],");
             print_string("      \"end\": [");
-            print_endline(string_of_int(pexp_loc.Location.loc_end.pos_lnum) ++ ", " ++ string_of_int(pexp_loc.Location.loc_end.pos_cnum - pexp_loc.Location.loc_end.pos_bol) ++ "],");
+            print_endline(string_of_int(pexp_loc.Location.loc_end.pos_lnum) ++ ", " ++ string_of_int(pexp_loc.Location.loc_end.pos_cnum - pexp_loc.Location.loc_end.pos_bol) ++ "]");
             print_endline("    }");
             iRefExpects := iRefExpects^ + 1;
           }
@@ -115,7 +115,7 @@ switch (Sys.argv) {
             print_endline("  \"expects\": [");
            let mp2 = default_mapper.structure(expectsMapper, ast); 
             print_endline("  ] ");
-            print_endline("{");
+            print_endline("}");
 
            /*close_out(oc);*/
            /*
