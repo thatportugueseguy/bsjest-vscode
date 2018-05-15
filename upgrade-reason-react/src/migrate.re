@@ -61,6 +61,7 @@ let expectsMapper = {
           switch (pexp_desc, pexp_loc) {
           | ({ pexp_desc: Pexp_ident({ txt: Lident("expect") })}, _) => {
             iRefExpects^ == 0 ? print_endline("    {") : print_endline("    ,{");
+            print_endline("      \"file\": \"" ++ currentFileRef^ ++ "\"," );
             print_string("      \"start\": [");
             print_endline(string_of_int(pexp_loc.Location.loc_start.pos_lnum) ++ ", " ++ string_of_int(pexp_loc.Location.loc_start.pos_cnum - pexp_loc.Location.loc_start.pos_bol) ++ "],");
             print_string("      \"end\": [");
@@ -134,4 +135,4 @@ switch (Sys.argv) {
 
        };
      });
-};
+ };
