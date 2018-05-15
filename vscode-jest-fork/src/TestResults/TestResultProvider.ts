@@ -36,7 +36,7 @@ export class TestResultProvider {
     }
 
     const { itBlocks } = parseTest(filePath)
-    const results = this.reconciler.assertionsForTestFile(filePath) || []
+    const results = this.reconciler.assertionsForTestFile(filePath.replace('.re','.bs.js')) || []
 
     const resultsByTestName = {}
     for (const result of results) {

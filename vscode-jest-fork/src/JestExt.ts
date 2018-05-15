@@ -339,7 +339,7 @@ export class JestExt {
 
     const globs: string[] = (this.jestSettings.settings as any).testMatch
     if (globs && globs.length) {
-      const matchers = globs.map(each => matcher(each, { dot: true }))
+      const matchers = globs.map(each => matcher(each.replace('.js','.re'), { dot: true }))
       const matched = matchers.some(isMatch => isMatch(filePath))
       return matched
     }

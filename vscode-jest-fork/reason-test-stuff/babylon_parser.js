@@ -16,11 +16,11 @@ const parse = (exports.parse = file => {
     result.itBlocks.push({
       start: {
         line: parseInt(startPosition[0]),
-        column: parseInt(startPosition[1]),
+        column: parseInt(startPosition[1]) + 1,
       },
       end: {
         line: parseInt(endPosition[0]),
-        column: parseInt(endPosition[1]),
+        column: parseInt(endPosition[1]) + 1,
       },
       file: file,
       name: lines[i],
@@ -30,13 +30,14 @@ const parse = (exports.parse = file => {
     const startPosition = lines[i].split(' ')
     const endPosition = lines[i + 1].split(' ')
     result.expects.push({
+      file: file,
       start: {
         line: parseInt(startPosition[0]),
-        column: parseInt(startPosition[1]),
+        column: parseInt(startPosition[1]) + 1,
       },
       end: {
         line: parseInt(endPosition[0]),
-        column: parseInt(endPosition[1]),
+        column: parseInt(endPosition[1]) + 1,
       },
     })
   }

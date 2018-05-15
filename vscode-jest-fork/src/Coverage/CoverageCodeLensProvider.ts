@@ -5,7 +5,7 @@ import { JestExt } from '../JestExt'
 export function registerCoverageCodeLens(jestExt: JestExt) {
   return [
     vscode.languages.registerCodeLensProvider(
-      { pattern: '**/*.{ts,tsx,js,jsx}' },
+      { pattern: '**/*.{ts,tsx,js,jsx,re}' },
       new CoverageCodeLensProvider(jestExt)
     ),
   ]
